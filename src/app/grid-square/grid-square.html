@@ -1,0 +1,21 @@
+<div
+  #container
+  class="cuadros-container"
+  [style.--slide-distance.px]="itemWidth() + gap()"
+>
+  <div class="cuadros-track" [style.gap.px]="gap()">
+    @for (item of items(); track item) {
+      <div
+        class="cuadro"
+        [style.width.px]="itemWidth()"
+        [style.height.px]="itemWidth()"
+        [class.rosa]="item % 2 === 0"
+        [class.amarillo]="item % 2 !== 0"
+      >
+        @if (item === centerIndex()) {
+          <span class="corazon">{{ icon() }}</span>
+        }
+      </div>
+    }
+  </div>
+</div>

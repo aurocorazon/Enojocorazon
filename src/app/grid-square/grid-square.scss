@@ -1,0 +1,59 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.cuadros-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 24px 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.cuadros-track {
+  display: flex;
+  align-items: center;
+  animation: squares-carousel 1.4s linear infinite;
+  transform: translateX(calc(-1 * var(--slide-distance)));
+}
+
+.cuadro {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cuadro.rosa {
+  background-color: #d85be0;
+}
+
+.cuadro.amarillo {
+  background-color: #fada5e;
+}
+
+.corazon {
+  color: #000000;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+@keyframes squares-carousel {
+  from {
+    transform: translateX(calc(-1 * var(--slide-distance)));
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cuadros-track {
+    animation: none;
+  }
+}
